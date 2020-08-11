@@ -1,6 +1,7 @@
 package com.spring.ioc;
 
 import com.spring.ioc.modal.Dog;
+import com.spring.ioc.modal.Person;
 import javafx.application.Application;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,7 +18,8 @@ public class ConstructionDIMain {
         ApplicationContext ap=new ClassPathXmlApplicationContext("ApplicationContext.xml");
         Dog dog=ap.getBean("dogTwo", Dog.class);
         System.out.println(dog);
-
+        Person person=ap.getBean("personTwo",Person.class);
+        System.out.println(person);
     }
 
 }

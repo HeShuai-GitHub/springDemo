@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--集合数值注入-->
+    <bean id="person" class="com.spring.ioc.modal.Person">
+        <property name="id" value="1"></property>
+        <property name="dog">
+            <bean class="com.spring.ioc.modal.Dog">
+                <property name="name" value="小绿"></property>
+                <property name="color" value="绿色"></property>
+            </bean>
+        </property>
+        <!--map数据注入-->
+        <property name="possess">
+            <map>
+                <entry>
+                    <key>
+                        <value>101</value>
+                    </key>
+                    <value>101</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>202</value>
+                    </key>
+                    <value>202</value>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+
+</beans>

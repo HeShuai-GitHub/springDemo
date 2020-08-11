@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--P和C命名空间：传统在通过构造方法或set方法给bean注入关联项时通常是通过constructor-arg元素和property元素来定义的。
+有了p命名空间和c命名空间时我们可以简单的把它们当做bean的一个属性来进行定义，具体属性定义如下-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <!--set方法 p空间模式注入-->
+        <bean id="person" class="com.spring.ioc.modal.Person" p:id="110" p:dog-ref="dog"></bean>
+        <!--构造方法 c空间模式注入-->
+        <bean id="dog" class="com.spring.ioc.modal.Dog" c:_0="小黄" c:_1="黄色"></bean>
+
+</beans>

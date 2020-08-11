@@ -5,7 +5,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <beans>
         <!-- <bean> 定义spring管理的一个bean对象
              id：该对象的唯一标识，不能重复
              class：该对象所属类的全限定名
@@ -14,6 +13,19 @@
             <!--初始化成员变量的值 value:初始化基本数据类型；ref：初始化引用变量-->
             <property name="id" value="110"></property>
             <property name="dog" ref="dog"></property>
+            <!--级联赋值注入-->
+            <property name="dog.name" value="小红"></property>
+        </bean>
+
+        <!--内部类 bean注入赋值-->
+        <bean id="personTwo" class="com.spring.ioc.modal.Person">
+            <property name="id" value="110"></property>
+            <property name="dog" >
+                <bean id="dogTwo" class="com.spring.ioc.modal.Dog">
+                    <property name="name" value="小红"></property>
+                    <property name="color" value="红色"></property>
+                </bean>
+            </property>
         </bean>
 
         <bean id="dog" class="com.spring.ioc.modal.Dog">
@@ -23,9 +35,8 @@
 
         <bean id="dogTwo" class="com.spring.ioc.modal.Dog">
             <!--构造方法注入方式，value:注入值；index：构造方法中的参数位置-->
-            <constructor-arg value="小红" index="0"></constructor-arg>
-            <constructor-arg value="红色" index="1"></constructor-arg>
+            <constructor-arg value="小红" index="0" type="java.lang.String"></constructor-arg>
+            <constructor-arg value="红色" index="1" type="java.lang.String"></constructor-arg>
         </bean>
-    </beans>
 
 </beans>

@@ -1,5 +1,7 @@
 package com.spring.ioc.modal;
 
+import java.util.Map;
+
 /**
  * @program: springDemo
  * @description: 测试modal类
@@ -12,11 +14,14 @@ public class Person {
 
     private Dog dog;
 
+    private Map<String,String> possess;
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", dog=" + dog +
+                ", possess=" + possess +
                 '}';
     }
 
@@ -34,5 +39,13 @@ public class Person {
 
     public void setDog(Dog dog) {
         this.dog = dog;
+    }
+
+    public Map<String, String> getPossess() {
+        return possess;
+    }
+
+    public void setPossess(Map<String, String> possess) {
+        this.possess = possess;
     }
 }
