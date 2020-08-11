@@ -35,4 +35,12 @@ public class Dog {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public Dog() {
+    }
+
+    public Dog(String name, String color) {
+        this.name = name;
+        this.color = color;
+    }
 }

@@ -1,22 +1,23 @@
 package com.spring.ioc;
 
-import com.spring.ioc.modal.Person;
+import com.spring.ioc.modal.Dog;
+import javafx.application.Application;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @program: springDemo
- * @description: 主运行处理类
+ * @description: spring构造方法注入方式
  * @author: hs
- * @create: 2020-08-11 12:22
+ * @create: 2020-08-11 18:07
  **/
-public class TestMain {
+public class ConstructionDIMain {
 
     public static void main(String[] args) {
-        //获得spring上下文环境
         ApplicationContext ap=new ClassPathXmlApplicationContext("ApplicationContext.xml");
-        //拿到bean
-        Person person = (Person)ap.getBean("person");
-        System.out.println(person);
+        Dog dog=ap.getBean("dogTwo", Dog.class);
+        System.out.println(dog);
+
     }
+
 }
