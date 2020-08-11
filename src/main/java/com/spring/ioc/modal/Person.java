@@ -10,7 +10,15 @@ public class Person {
 
     private Integer id;
 
-    private String name;
+    private Dog dog;
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", dog=" + dog +
+                '}';
+    }
 
     public Integer getId() {
         return id;
@@ -20,19 +28,11 @@ public class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Dog getDog() {
+        return dog;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+    public void setDog(Dog dog) {
+        this.dog = dog;
     }
 }

@@ -7,8 +7,16 @@
 
     <beans>
         <bean id="person" class="com.spring.ioc.modal.Person">
-
+            <!--初始化成员变量的值 value:初始化基本数据类型；ref：初始化引用变量-->
+            <property name="id" value="110"></property>
+            <property name="dog" ref="dog"></property>
         </bean>
+
+        <bean id="dog" class="com.spring.ioc.modal.Dog">
+            <property name="name" value="小白"></property>
+            <property name="color" value="白色"></property>
+        </bean>
+
     </beans>
 
 </beans>
