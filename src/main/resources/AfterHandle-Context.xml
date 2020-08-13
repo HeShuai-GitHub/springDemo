@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--后置处理器测试配置文件-->
+    <!--正常Bean生成生命周期：
+            1. 创建Bean
+            2. 依赖注入
+            3. 初始化
+            4. 相关操作
+            5. 注销
+    -->
+    <!--
+        init-method:设置Bean的初始化方法
+        destroy-method：设置Bean的销毁方法，当IOC容器被销毁时触发-->
+    <bean id="lifeCircle" class="com.spring.ioc.modal.LifeCircle" init-method="init" destroy-method="destroy">
+        <property name="name" value="钟馗"></property>
+    </bean>
+
+    <!--添加后置处理器后，在Bean的生命周期内的初始化之前后各增加了一个操作，声明一个后置处理器，对所有的Bean都有效果-->
+    <bean class="com.spring.ioc.modal.AfterHandle"></bean>
+
+
+</beans>

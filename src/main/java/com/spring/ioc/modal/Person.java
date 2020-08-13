@@ -14,6 +14,8 @@ public class Person {
 
     private Dog dog;
 
+    private Animal animal;
+
     private Map<String,String> possess;
 
     @Override
@@ -21,6 +23,7 @@ public class Person {
         return "Person{" +
                 "id=" + id +
                 ", dog=" + dog +
+                ", animal=" + animal +
                 ", possess=" + possess +
                 '}';
     }
@@ -39,6 +42,14 @@ public class Person {
 
     public void setDog(Dog dog) {
         this.dog = dog;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
     public Map<String, String> getPossess() {

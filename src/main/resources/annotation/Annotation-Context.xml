@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+    <!--需要配置 context命名空间
+        component-scan，组件扫描，即扫描指定包下边的所有组件；
+        组件：即所有被spring加载的bean
+        作为spring的组件进行加载，会自动在springIOC容器中生成相应的bean，这些bean的id以类的小写首字母为准；
+        use-default-filters：默认过滤规则，即扫描指定包下的所有类
+        include-filter: 只包含某个条件。
+            type:annotation,指定注解，assignable，指定类；
+            expression：指定类或注解
+            注：use-default-filters必须为false，不扫描包
+        exclude-filter：排除某个条件
+ype:        annotation,指定注解，assignable，指定类；
+            expression：指定类或注解
+            注：use-default-filters必须为true，扫描包,只有扫描后才可以排除
+        注:因为use-default-filters的属性值冲突，所以include-filter和exclude-filter可以定义多个，但是不可以同时定义
+    -->
+    <context:component-scan base-package="com.spring.ioc.main_2.annotation" use-default-filters="true">
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="assignable" expression="com.spring.ioc.main_2.annotation.controller.AnnotationController"/>-->
+        <!--<context:exclude-filter type="assignable" expression="com.spring.ioc.main_2.annotation.controller.AnnotationController"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+    </context:component-scan>
+
+
+</beans>

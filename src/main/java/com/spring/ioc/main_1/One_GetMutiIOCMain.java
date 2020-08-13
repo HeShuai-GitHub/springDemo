@@ -1,4 +1,4 @@
-package com.spring.ioc;
+package com.spring.ioc.main_1;
 
 import com.spring.ioc.modal.Person;
 import org.springframework.context.ApplicationContext;
@@ -12,7 +12,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * @author: hs
  * @create: 2020-08-11 12:22
  **/
-public class GetMutiIOCMain {
+public class One_GetMutiIOCMain {
 
     public static void main(String[] args) {
         //获得spring上下文环境，即IOC容器，它的顶级实现接口是BeanFactory

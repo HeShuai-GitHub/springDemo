@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--常规配置引用类型变量属性-->
+    <bean id="personOne" class="com.spring.ioc.modal.Person">
+        <property name="id" value="110"></property>
+        <property name="dog" ref="dog"></property>
+    </bean>
+    <!--autowire:自动装配；默认 no
+    byName:根据id来自动配置引用类型属性，需要成员属性与spring bean中的id属性值一致
+    byType：根据spring容器中bean的类型来为引用成员属性赋值，可以兼容性赋值，在使用byType的过程中，要求spring
+    容器中只能有一个相同类型的bean可以为他赋值
+    -->
+    <bean id="personTwo" class="com.spring.ioc.modal.Person" autowire="byName">
+        <property name="id" value="220"></property>
+    </bean>
+
+    <bean id="personThree" class="com.spring.ioc.modal.Person" autowire="byType">
+        <property name="id" value="330"></property>
+    </bean>
+
+    <bean id="dog" class="com.spring.ioc.modal.Dog">
+        <property name="name" value="小红"></property>
+        <property name="color" value="red"></property>
+    </bean>
+
+    <bean id="cat" class="com.spring.ioc.modal.Cat">
+        <property name="cat" value="猫"></property>
+    </bean>
+
+</beans>

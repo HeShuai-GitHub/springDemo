@@ -1,4 +1,4 @@
-package com.spring.ioc;
+package com.spring.ioc.main_1;
 
 import com.spring.ioc.modal.Person;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author: hs
  * @create: 2020-08-12 00:27
  **/
-public class ListMain {
+public class Four_ListMain {
 
     public static void main(String[] args) {
 

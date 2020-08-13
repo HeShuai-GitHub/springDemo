@@ -46,6 +46,20 @@
             <version>4.3.7.RELEASE</version>
         </dependency>
 
+        <!--spring jdbc依赖，这个jar 文件包含对Spring 对JDBC 数据访问进行封装的所有类。-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.3.7.RELEASE</version>
+        </dependency>
+        <!--依赖数据库的jar包-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.26</version>
+        </dependency>
+
+
         <!--spring依赖 end-->
     </dependencies>
 

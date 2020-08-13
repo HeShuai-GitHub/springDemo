@@ -1,4 +1,4 @@
-package com.spring.ioc;
+package com.spring.ioc.main_1;
 
 import com.spring.ioc.modal.Person;
 import org.springframework.context.ApplicationContext;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author: hs
  * @create: 2020-08-11 22:35
  **/
-public class PAndCMain {
+public class Three_PAndCMain {
 
     public static void main(String[] args) {
 

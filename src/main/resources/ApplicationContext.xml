@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--spring的命名空间，他的作用是，xml文件本身是可扩展标记语言，简单点说就是在xml文件中没有固定的语法标签，任何标签都可以使用
-这也代表了填写标签时没有任何提示信息，而spring命名空间的作用就是规范spring的xml配置文件的标签-->
+这也代表了填写标签时没有任何提示信息，而spring命名空间的作用就是规范spring的xml配置文件的标签，xsd文件也称之为标签库文件-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">

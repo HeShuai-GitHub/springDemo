@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--scope 设置是单例模式还是多例模式，singleton：单例；prototype:多例 spring默认是单例
+        lazy-init: 设置当为单例模式的时候是否延迟加载，默认false,即随着容器被创建立即加载创建实例对象；当为true时，延迟加载，获得对象时创建实例对象
+        init-method:设置Bean的初始化方法
+        destroy-method：设置Bean的销毁方法，当IOC容器被销毁时触发
+             -->
+    <bean id="scopeLazyOne" class="com.spring.ioc.modal.ScopeLazy" scope="singleton" lazy-init="default" init-method="init"
+        destroy-method="destory"
+    ></bean>
+
+   <!-- <bean id="scopeLazyTwo" class="com.spring.ioc.modal.ScopeLazy" scope="singleton" lazy-init="false"></bean>-->
+
+    <!--<bean id="scopeLazyThree" class="com.spring.ioc.modal.ScopeLazy" scope="singleton" lazy-init="true"></bean>-->
+
+    <!--<bean id="scopeLazyFour" class="com.spring.ioc.modal.ScopeLazy" scope="prototype" ></bean>-->
+</beans>
