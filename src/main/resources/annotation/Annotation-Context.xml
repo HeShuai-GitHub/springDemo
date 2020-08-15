@@ -18,7 +18,7 @@
 ype:        annotation,指定注解，assignable，指定类；
             expression：指定类或注解
             注：use-default-filters必须为true，扫描包,只有扫描后才可以排除
-        注:因为use-default-filters的属性值冲突，所以include-filter和exclude-filter可以定义多个，但是不可以同时定义
+        注:因为use-default-filters的属性值冲突，所以include-filter和exclude-filter可以同时定义多个，但是不可以同时定义
     -->
     <context:component-scan base-package="com.spring.ioc.main_2.annotation" use-default-filters="true">
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -26,6 +26,7 @@ ype:        annotation,指定注解，assignable，指定类；
         <!--<context:exclude-filter type="assignable" expression="com.spring.ioc.main_2.annotation.controller.AnnotationController"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
     </context:component-scan>
+
 
 
 </beans>
