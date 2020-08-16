@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
 >
+    <!--Xml方式定义事务配置-->
 
     <!--使用Bean定义 来读取properties文件-->
 <!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -34,8 +36,27 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <!--开启事务管理注解方式，transaction-manager用来设置事务管理器-->
-    <tx:annotation-driven transaction-manager="dataSourceTransactionManager"/>
+    <!--Xml方式定义事务配置 start-->
+    <!--定义事务通知-->
+    <tx:advice id="txAdvice" transaction-manager="dataSourceTransactionManager">
+        <tx:attributes>
+            <!--设置通知到的具体方法-->
+            <!--<tx:method name="buyBook"/>-->
+            <tx:method name="buyTwoBooks"/>
+            <!--可以使用通配符的方式，匹配多个方法-->
+            <!--<tx:method name="*"/>-->
+            <!--<tx:method name="select*"/>-->
+        </tx:attributes>
+    </tx:advice>
+
+    <!--事务相当于Aop的一个应用方面-->
+    <aop:config>
+        <!--定义切入点表达式-->
+        <aop:pointcut id="pointCut" expression="execution(* com.spring.jdbc.transaction.service.Impl.*.*(..))"/>
+        <!--配置通知-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointCut"/>
+    </aop:config>
+    <!--Xml方式定义事务配置 start-->
 
     <!--扫描指定路径下的包，并开启spring注解模式-->
     <context:component-scan base-package="com.spring.jdbc.transaction"></context:component-scan>
